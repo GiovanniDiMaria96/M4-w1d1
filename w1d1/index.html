@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m4-w1d1</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <!--ESERCIZIO (1)-->
+    <div>
+        <h2>Primo esercizio:</h2>
+        <label for="primoNumero">Primo numero:</label>
+        <input id="primoNumero" type="text">
+        <label for="secondoNumero">Secondo numero:</label>
+        <input id="secondoNumero" type="text">
+        <button id="invio" onclick="esercizioUno()">Invio</button>
+    </div>
+    <div>
+        <p id="risultatoUno"></p>
+    </div>
+
+
+    <!--ESERCIZIO (2)-->
+
+    <div>
+        <h2>Secondo esercizio:</h2>
+        <label for="stringa">Inserisci una parola di almeno tre lettere:</label>
+        <input id="stringa" type="text">
+        <button id="invio" onclick="esercizioDue()">Invio</button>
+    </div>
+    <div>
+        <p id="risultatoDue"></p>
+    </div>
+
+    <!--ESERCIZIO (3)-->
+    <div>
+        <h2>Terzo esercizio:</h2>
+        <label for="numeroUno">Primo numero:</label>
+        <input id="numeroUno" type="text">
+        <label for="numeroDue">Secondo numero:</label>
+        <input id="numeroDue" type="text">
+        <button id="invio" onclick="esercizioTre()">Invio</button>
+    </div>
+    <div>
+        <p id="risultatoTre"></p>
+    </div>
+
+    <!--ESERCIZIO (4)-->
+    <div>
+        <h2>Quarto esercizio:</h2>
+        <label for="stringa">Inserisci un nome di città (es. Los Angeles, New York)</label>
+        <input id="stringaA" type="text">
+        <button id="invio" onclick="esercizioQuattro()">Invio</button>
+    </div>
+    <div>
+        <p id="risultatoQuattro"></p>
+    </div>
+
+    <!--ESERCIZIO (5)-->
+    <div>
+        <h2>Quinto esercizio:</h2>
+        <label for="arrayUno">Array:</label>
+        <p id="arrayUno"></p>
+        <label for="sommaUno">Somma dell'array:</label>
+        <p id="sommaUno"></p>
+    </div>
+
+    <!--ESERCIZIO (6)-->
+    <div>
+        <h2>Sesto esercizio:</h2>
+        <label for="arrayDue">Array:</label>
+        <p id="arrayDue"></p>
+        <label for="includes">Risultato:</label>
+        <p id="includes"></p>
+
+    </div>
+
+    <!--ESERCIZIO (7)-->
+    <div>
+        <h2>Settimo esercizio:</h2>
+        <p id="inserisciNumero">Inserisci un numero tra 0 e 180</p>
+        <input id="angolo" type="text">
+        <button id="invio" onclick="esercizioSette(angolo)">Invio</button>
+    </div>
+
+    <!--ESERCIZIO (8)-->
+    <div>
+        <h2>Ottavo esercizio:</h2>
+        <p>Acronimo di "Fabbrica Italiana Automobili Torino"</p>
+        <p id="ACRONIMO"></p>
+    </div>
+
+</body>
+<script>
+    /*    ESERCIZIO (1)   */
+    function esercizioUno() {
+        console.log("ESERCIZIO (1): inviato");
+        let primoNumero = document.getElementById("primoNumero").value;
+        let secondoNumero = document.getElementById("secondoNumero").value;
+        let risultato = false;
+        primoNumero = Number(primoNumero);
+        secondoNumero = Number(secondoNumero);
+        let somma = primoNumero + secondoNumero;
+        if (primoNumero === "50" || secondoNumero === "50" || somma == "50") {
+            risultato = true;
+        }
+
+        document.getElementById("risultatoUno").innerText = risultato;
+    }
+
+    /*    ESERCIZIO (2)    */
+
+    function esercizioDue() {
+        console.log("ESERCIZIO (2): inviato");
+        let stringa = document.getElementById("stringa").value;
+        // TRASFORMA UNA STRINGA IN UN ARRAY
+        let stringaDue = stringa.split("");
+        // RIMUOVE UN ELEMENTO SECONDO L'INDICE DELL'ARRAY
+        let stringaTre = stringaDue.splice(3, 1);
+        // UNISCE GLI ELEMENTI DI UN ARRAY (ELIMINA LE VIRGOLE)
+        let stringaQuattro = stringaDue.join("");
+
+        document.getElementById("risultatoDue").innerText = stringaQuattro;
+    }
+
+    /*    ESERCIZIO (3)    */
+
+    function esercizioTre() {
+        console.log("ESERCIZIO (3): inviato");
+        let risultatoTre = false;
+        // CONVERSIONE DA STRINGA A NUMERO
+        let numeroUno = parseFloat(document.getElementById("numeroUno").value);
+        let numeroDue = parseFloat(document.getElementById("numeroDue").value);
+
+        if (
+            ((numeroUno >= 40 && numeroUno <= 60) || (numeroUno >= 70 && numeroUno <= 100))
+            &&
+            ((numeroDue >= 40 && numeroDue <= 60) || (numeroDue >= 70 && numeroDue <= 100))
+        ) {
+            risultatoTre = true;
+        } else {
+            risultatoTre = false;
+        }
+
+        document.getElementById("risultatoTre").innerText = risultatoTre;
+    }
+
+    /*   ESERCIZIO (4)      */
+
+    function esercizioQuattro() {
+        console.log("ESERCIZIO (4): inviato")
+        let stringaA = document.getElementById("stringaA").value;
+        let stringaB = stringaA.toLowerCase();
+        if (stringaB.startsWith("new") || stringaB.startsWith("los")) {
+            document.getElementById("risultatoQuattro").innerText = stringaA;
+        } else {
+            stringaB = false
+            document.getElementById("risultatoQuattro").innerText = stringaB;
+        }
+    }
+
+
+    /* ESERCIZIO (5)      */
+
+    // LE VARIABILI ALL'INTERNO DELLA FUNZIONE SONO NOMINATIVE
+    // The reduce() method of Array instances executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element.
+    // The final result of running the reducer across all elements of the array is a single value.
+
+    const arrayUno = [1, 2, 3, 4, 5]
+    function esercizioCinque(arrayUno) {
+        console.log("ESERCIZIO (5): inviato")
+        const partenza = 0;
+        return arrayUno.reduce((somma, totale) => somma + totale,
+            partenza,);
+    }
+    document.getElementById("arrayUno").innerText = arrayUno;
+    document.getElementById("sommaUno").innerText = (esercizioCinque(arrayUno));
+
+
+    /*    ESERCIZIO (6)     */
+
+    // The includes() method of Array instances determines whether an array includes a certain value
+    // among its entries "()", returning "true" or "false" as appropriate.
+
+    arrayDue = [1, 5]
+    function esercizioSei(array) {
+        console.log("ESERCIZIO (6): inviato")
+        return !array.includes(1) && !array.includes(3)
+    }
+    document.getElementById("arrayDue").innerText = arrayDue;
+    document.getElementById("includes").innerText = (esercizioSei(arrayDue));
+
+
+    /* ESERCIZIO (7)    */
+
+
+    function esercizioSette() {
+        const angolo = parseFloat(document.getElementById("angolo").value);
+        console.log("ESERCIZIO (7): inviato");
+
+        if (angolo < 90) {
+            document.getElementById("inserisciNumero").innerText = "acuto";
+        } else if (angolo === 90) {
+            document.getElementById("inserisciNumero").innerText = "retto";
+        } else if (angolo > 90 && angolo < 180) {
+            document.getElementById("inserisciNumero").innerText = "ottuso";
+        } else if (angolo === 180) {
+            document.getElementById("inserisciNumero").innerText = "piatto";
+        } else {
+            document.getElementById("inserisciNumero").innerText = "Inserisci un numero tra 0 e 180";
+        }
+    }
+
+
+    /* ESERCIZIO (8)     */
+
+
+
+    function esercizioOtto(acronimo) {
+        console.log("ESERCIZIO (8) inviato");
+        let acronimo1 = acronimo.toUpperCase();
+        let acronimo2 = acronimo1.split(" ");
+        let acronimo3 = "";
+        for (index of acronimo2) {
+            acronimo3 += index.charAt(0);
+        }
+        return acronimo3;
+    }
+    document.getElementById("ACRONIMO").innerText = esercizioOtto("fabbrica italiana automobili torino");
+
+
+
+
+</script>
+
+</html>
