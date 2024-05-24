@@ -97,3 +97,10 @@ function extra6(nDue) {
     }
 }
 (extra6(-20));
+
+// ESERCIZIO 7
+
+function reverseDue(topolino) {
+    return topolino = new String(topolino.split("").reverse().join(""))
+}
+console.log("esercizio 7 " + reverseDue("pippo"));
