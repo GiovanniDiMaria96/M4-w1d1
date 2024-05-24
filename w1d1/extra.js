@@ -74,17 +74,9 @@ function reverse (nUno) {
 }
 console.log("esercizio 5 " + reverse("189"));
 
+// ESERCIZIO 6
 
-// ESERCIZIO 7
-
-function reverseDue(topolino) {
-    return topolino = new String(topolino.split("").reverse().join(""))
-}
-console.log("esercizio 7 " + reverseDue("pippo"));
-
-// ESERCIZIO 9
-
-function extraNove(nDue) {
+function extra6(nDue) {
     //The Math.abs() static method returns the absolute value of a number.
     let nTre = Math.abs(nDue);
     let arUno = [];
@@ -101,7 +93,16 @@ function extraNove(nDue) {
     //the specified number of copies of this string, concatenated together.
     let arDue = Array.from(arUno.values()).map((z) => "#".repeat(z));
     for (let v of arDue) {
-        console.log("esercizio 9 " + v);
+        console.log("esercizio 6 " + v);
     }
 }
-(extraNove(-20));
+(extra6(-20));
+
+
+// ESERCIZIO 7
+
+function reverseDue(topolino) {
+    return topolino = new String(topolino.split("").reverse().join(""))
+}
+console.log("esercizio 7 " + reverseDue("pippo"));
+
