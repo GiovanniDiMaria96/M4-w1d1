@@ -93,7 +93,7 @@ function extra6(nDue) {
     //the specified number of copies of this string, concatenated together.
     let arDue = Array.from(arUno.values()).map((z) => "#".repeat(z));
     for (let v of arDue) {
-        console.log(v);
+        console.log("esercizio 6 " + v);
     }
 }
-console.log(extra6(-20));
+(extra6(-20));
