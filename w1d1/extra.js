@@ -76,3 +76,24 @@ console.log("esercizio 5 " + reverse("189"));
 
 // ESERCIZIO 6
 
+function extra6(nDue) {
+    //The Math.abs() static method returns the absolute value of a number.
+    let nTre = Math.abs(nDue);
+    let arUno = [];
+    for (var i = 1; i <= nTre; i++) {
+        arUno.push(i);
+    }
+    //The values() method of Array instances returns a new array iterator object that 
+    //iterates the value of each item in the array.
+
+    //The map() method of Array instances creates a new array populated with the results 
+    //of calling a provided function on every element in the calling array.
+
+    //The repeat() method of String values constructs and returns a new string which contains 
+    //the specified number of copies of this string, concatenated together.
+    let arDue = Array.from(arUno.values()).map((z) => "#".repeat(z));
+    for (let v of arDue) {
+        console.log(v);
+    }
+}
+console.log(extra6(-20));
